@@ -1,0 +1,76 @@
+/* Common Styles for All Pages */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, nav, section, footer {
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Page Specific Styles */
+.header {
+    background-color: #007bff;
+    color: white;
+    padding: 100px 0;
+}
+
+.about-section, .skills-section, .projects-section, .contact-section {
+    padding: 50px 0;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    margin: 10px;
+    text-align: center;
+}
+
+.skill-logo {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: 0 auto;
+}
