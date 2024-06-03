@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gangadhar's Portfolio</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <meta name="description" content="Gangadhar's portfolio showcasing projects and skills in data analysis and machine learning.">
+    <style>
+        /* Custom magical styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9; /* Light gray background */
+        }
+        .header {
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            background-color: #FF6B6B; /* Vibrant pink background */
+        }
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-family: 'Permanent Marker', cursive; /* Whimsical font for header */
+        }
+        .header p {
+            font-family: 'Quicksand', sans-serif; /* Friendly font for paragraph */
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(10px);
+            }
+        }
+        .navbar {
+            margin-bottom: 0;
+        }
+        .small-image {
+            width: 175px;
+            height: 300px;
+        }
+        .project-card, .skill-card, .contact-card, .certification-card {
+            margin-bottom: 30px;
+            background-color: #F4F1DE; /* Cream background for cards */
+            border-radius: 15px; /* Rounded corners for cards */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect for cards */
+        }
+        .more-content {
+            display: none;
+        }
+        .skills-section .skill-icon, .contact-section .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #6B5B95; /* Lavender purple color for icons */
+        }
+        .skills-section .skill-name, .contact-section .contact-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #6B5B95; /* Lavender purple color for text */
+        }
+        .contact-card .btn {
+            margin-top: 10px;
+            background-color: #FF6B6B; /* Vibrant pink background for buttons */
+            border: none;
+        }
+        .contact-card .btn:hover {
+            background-color: #FF7777; /* Slightly darker pink color on button hover */
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+        }
+        .skills-list li {
+            margin: 10px;
+            text-align: center;
+            background-color: #6B5B95; /* Lavender purple background for skill logos */
+            padding: 10px; /* Add padding to skill logos */
+            border-radius: 50%; /* Make skill logos round */
+            transition: transform 0.3s ease; /* Add smooth transition on hover */
+        }
+        .skills-list li:hover {
+            transform: scale(1.1); /* Increase size on hover */
+        }
+        .skill-image {
+            max-width: 70px;
+            max-height: 70px;
+        }
+        .animate-on-click {
+            animation: shake 0.5s;
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+        .certification-card .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+        .certification-card .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #6B5B95; /* Lavender purple color for text */
+        }
+        .certification-card .card-text a {
+            color: #FF6B6B; /* Vibrant pink color for links */
+            text-decoration: none;
+        }
+        .certification-card .card-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Portfolio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#certifications">Certifications</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Header Section -->
+<header class="header" data-aos="fade-up">
+    <div class="container">
+        <h1 class="animate__animated animate__heartBeat" style="color: #fff;">Welcome to My Portfolio</h1>
+        <p class="animate__animated animate__fadeInUp" style="color: #fff;">A showcase of my work and skills</p>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about" class="about-section mb-5" data-aos="fade-up">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 about-content text-center">
+                <h2>About Me</h2>
+                <p>Hello! I'm Gangadhar, a highly motivated individual with a Bachelor of Technology in Electronics and Communication from the National Institute of Technology. I possess a robust foundation in data analysis, machine learning, and deep learning, with hands-on experience in various domains including hardware, networking, and data visualization.</p>
+                <p>I have developed strong skills in programming languages such as Python and SQL, and I am proficient in tools like Jupyter Notebook, VS Code, and Power BI. My certifications in Data Science, Database Management, Python, and MySQL from platforms like NPTEL and HackerRank further validate my technical prowess.</p>
+                <p>My recent projects highlight my capabilities in data analysis and software development. These include conducting an Exploratory Data Analysis (EDA) on sales data to identify key trends and insights, developing a comprehensive Bank Management System, and creating a Facial Emotion Detection system using convolutional neural networks (CNN). I am passionate about applying my analytical skills to derive meaningful insights and solutions that drive business growth.</p>
+                <img src="about/gangadhar.jpg" alt="Gangadhar's Picture" class="about-image animate__animated animate__zoomIn rounded-circle small-image mx-auto d-block">
+            </div>
+        </div>
+    </div>                
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section mb-5">
+    <div class="container" data-aos="fade-up">
+        <h2 class="text-center">Projects</h2>
+        <div class="row">
+            <div class="col-md-4 project-card" data-aos="flip-left">
+                <div class="card">
+                    <img src="project/imagesprojects1.jpeg" class="card-img-top" alt="Project 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Exploratory Data Analysis</h5>
+                        <p class="card-text">
+                            – Conducted an Exploratory Data Analysis (EDA) on a comprehensive sales dataset, focusing on identifying key sales trends, top-performing products, and valuable customers.
+                            <span class="more-content">
+                            – Utilized Python and popular data analysis libraries such as Pandas, Matplotlib, and Seaborn to clean, visualize, and analyze the data.
+                            – Generated actionable insights and recommendations to enhance sales strategies and improve business performance.
+                            </span>
+                            <button class="btn btn-link read-more-btn" onclick="toggleMoreContent(this)">Read more</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 project-card" data-aos="flip-right">
+                <div class="card">
+                    <img src="project/imagesprojects2.jpeg" class="card-img-top" alt="Project 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Bank Management System</h5>
+                        <p class="card-text">
+                            – Designed and developed a comprehensive Bank Management System using Python and SQL, offering functionalities for managing customer accounts, transactions, and loans.
+                            <span class="more-content">
+                            – Implemented a secure login system with different user roles (admin and customer) to ensure data privacy and access control.
+                            – Conducted rigorous testing and debugging to ensure system reliability, performance, and security.
+                            </span>
+                            <button class="btn btn-link read-more-btn" onclick="toggleMoreContent(this)">Read more</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 project-card" data-aos="flip-left">
+                <div class="card">
+                    <img src="project/imagesprojects3.png" class="card-img-top" alt="Project 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Facial Emotion Detection</h5>
+                        <p class="card-text">
+                            – Developed a Facial Emotion Detection system using convolutional neural networks (CNN) to accurately identify and classify emotions from facial expressions.
+                            <span class="more-content">
+                            – Preprocessed and augmented a large dataset of facial images to improve model accuracy and robustness.
+                            – Employed deep learning frameworks such as TensorFlow and Keras to build, train, and evaluate the CNN model.
+                            – Achieved high accuracy in emotion classification, providing valuable insights for applications in user experience, security, and psychological research.
+                            </span>
+                            <button class="btn btn-link read-more-btn" onclick="toggleMoreContent(this)">Read more</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section mb-5" data-aos="fade-up">
+    <div class="container" data-aos="fade-up">
+        <h2 class="text-center">Skills</h2>
+        <div class="row">
+            <div class="col-md-4 skill-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <object type="image/svg+xml" data="logo/python.svg" width="70" height="70"></object>
+                        <p class="skill-name">Python</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 skill-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <object type="image/svg+xml" data="logo/database.svg" width="70" height="70"></object>
+                        <p class="skill-name">SQL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 skill-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <object type="image/svg+xml" data="logo/pandas.svg" width="70" height="70"></object>
+                        <p class="skill-name">Pandas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 skill-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <object type="image/svg+xml" data="logo/numpy.svg" width="70" height="70"></object>
+                        <p class="skill-name">Numpy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 skill-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <object type="image/svg+xml" data="logo/matplotlib.svg" width="70" height="70"></object>
+                        <p class="skill-name">Matplotlib</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 skill-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <object type="image/svg+xml" data="logo/plotly.svg" width="70" height="70"></object>
+                        <p class="skill-name">Plotly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 skill-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <object type="image/svg+xml" data="logo/scipy.svg" width="70" height="70"></object>
+                        <p class="skill-name">Scipy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 skill-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <object type="image/svg+xml" data="logo/seaborn.svg" width="70" height="70"></object>
+                        <p class="skill-name">Seaborn</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 skill-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <object type="image/svg+xml" data="logo/statistics.svg" width="70" height="70"></object>
+                        <p class="skill-name">Data Visualization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 skill-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <object type="image/svg+xml" data="logo/ms excel.svg" width="70" height="70"></object>
+                        <p class="skill-name">MS Excel</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 skill-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="logo/Power BI.jpeg" alt="SQL" class="skill-image">
+                        <p class="skill-name">Power BI</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 skill-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <object type="image/svg+xml" data="logo/machine learning.svg" width="70" height="70"></object>
+                        <p class="skill-name">Machine Learning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 skill-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <object type="image/svg+xml" data="logo/deep learning.svg" width="70" height="70"></object>
+                        <p class="skill-name">Deep Learning</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 skill-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <object type="image/svg+xml" data="logo/statistics.svg" width="70" height="70"></object>
+                        <p class="skill-name">Statistics</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 skill-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <object type="image/svg+xml" data="logo/git.svg" width="70" height="70"></object>
+                        <p class="skill-name">Git</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+<!-- Certifications Section -->
+<section id="certifications" class="certifications-section mb-5">
+    <div class="container" data-aos="fade-up">
+        <h2 class="text-center">Certifications</h2>
+        <div class="row">
+            <div class="col-md-6 certification-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Python/HackerRank</h5>
+                        <a href="https://www.hackerrank.com/certificates/cd2845b611cd" class="btn btn-primary" target="_blank">Certification Link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 certification-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">MySQL/HackerRank</h5>
+                        <a href="https://www.hackerrank.com/certificates/9308043f4fba" class="btn btn-primary" target="_blank">Certification Link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 certification-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Problem Solving Certification/HackerRank</h5>
+                        <a href="https://www.hackerrank.com/certificates/9308043f4fba" class="btn btn-primary" target="_blank">Certification Link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 certification-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Career Essentials in Data Analysis by Microsoft and LinkedIn</h5>
+                        <a href="https://www.linkedin.com/learning/certificates/a324c4b5e9dd3fc69e915286b6c83559b41278b8f076a62139a3fea674ffe0db" class="btn btn-primary" target="_blank">Certification Link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 certification-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Science/NPTEL</h5>
+                        <a href="https://drive.google.com/file/d/1y5BoQjXtrBmtbUaoI2QwY6QochNXBVeV/view?usp=sharing" class="btn btn-primary" target="_blank">Certification Link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 certification-card" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Database Management System/NPTEL</h5>
+                        <a href="https://www.hackerrank.com/certificates/9308043f4fba" class="btn btn-primary" target="_blank">Certification Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section mb-5" data-aos="fade-up">
+    <div class="container" data-aos="fade-up">
+        <h2 class="text-center">Contact Me</h2>
+        <div class="row">
+            <div class="col-md-4 contact-card" data-aos="zoom-in">
+                <div class="text-center">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <p class="contact-name">Email</p>
+                    <a href="mailto:gangadhar.allam2001@gmail.com" class="btn btn-primary" target="_blank">Send Email</a>
+                </div>
+            </div>
+            <div class="col-md-4 contact-card" data-aos="zoom-in">
+                <div class="text-center">
+                    <i class="fab fa-linkedin contact-icon"></i>
+                    <p class="contact-name">LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/gangadharallam" class="btn btn-primary" target="_blank">View Profile</a>
+                </div>
+            </div>
+            <div class="col-md-4 contact-card" data-aos="zoom-in">
+                <div class="text-center">
+                    <i class="fab fa-github contact-icon"></i>
+                    <p class="contact-name">GitHub</p>
+                    <a href="https://github.com/gangadhar107" class="btn btn-primary" target="_blank">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
+    function toggleMoreContent(button) {
+        var moreContent = button.previousElementSibling;
+        if (moreContent.style.display === "none" || moreContent.style.display === "") {
+            moreContent.style.display = "inline";
+            button.textContent = "Read less";
+        } else {
+            moreContent.style.display = "none";
+            button.textContent = "Read more";
+        }
+    }
+</script>
+</body>
+</html>
